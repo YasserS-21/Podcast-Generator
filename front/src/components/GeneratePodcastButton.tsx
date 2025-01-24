@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function GeneratePodcastButton({audioFile}) {
+export default function GeneratePodcastButton({audioFile, userTextInput, inputType}) {
   
 
   return (
