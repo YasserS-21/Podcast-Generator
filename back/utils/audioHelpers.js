@@ -2,6 +2,13 @@ const ffmpeg = require('fluent-ffmpeg');
 const ffmpegStatic = require('ffmpeg-static');
 const { Readable } = require('stream');
 
+/**
+ * Audio processing utilities using FFmpeg
+ * - Converts uploaded audio to MP3 format
+ * - Processes audio stream using buffer
+ * - Returns path to processed file
+ */
+
 const processAudio = async (audioBuffer) => {
   try {
 

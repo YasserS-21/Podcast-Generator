@@ -3,6 +3,16 @@ const {processAudio} = require("../utils/audioHelpers.js")
 require('dotenv').config()
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
+/**
+ * Handles podcast generation logic from audio
+ * - Processes audio file uploads
+ * - Configures Gemini AI model
+ * - Generates podcast scripts
+ * 
+ * Environment Requirements:
+ * - GEMINI_API_KEY in .env file
+ */
+
 exports.generateFromAudio = async (req, res) => {
   try {
     // 1. Check if received a file

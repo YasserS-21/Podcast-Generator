@@ -3,6 +3,13 @@ const cors = require('cors');
 const podcastRoutes = require('./routes/podcastRoutes');
 const app = express();
 
+/**
+ * Express application setup
+ * - Configures CORS
+ * - Sets up JSON parsing
+ * - Mounts podcast routes under /api prefix
+ */
+
 // Middleware
 app.use(cors());
 app.use(express.json());
