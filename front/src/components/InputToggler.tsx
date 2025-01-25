@@ -8,6 +8,7 @@
 export default function InputToggler({setInputType, inputType}) {
   return (
     <>
+    <div className="input-toggle">
       <button 
         onClick={() => setInputType('text')}
         className={inputType === 'text' ? 'input-active' : ''}
@@ -20,6 +21,7 @@ export default function InputToggler({setInputType, inputType}) {
       >
         Audio Upload
       </button>
+    </div>
     </>
   )
 }
