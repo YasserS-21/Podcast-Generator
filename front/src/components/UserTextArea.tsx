@@ -1,5 +1,11 @@
 import React from 'react'
 
+/**
+ * Text input component for user's podcast content
+ * Props:
+ * - userTextInput: Current text input value
+ * - setUserTextInput: Function to update text input
+ */
 export default function UserTextArea({userTextInput, setUserTextInput}) {
     console.log(userTextInput)
   return (
