@@ -1,4 +1,4 @@
-import { generatePodcast } from '../../../utils/generatePodcast';
+import { generatePodcast } from '../../../../utils/generatePodcast';
 
 interface GeneratePodcastButtonProps {
   audioFile: File | null;

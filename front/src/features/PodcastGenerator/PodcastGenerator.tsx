@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import GeneratePodcastButton from '../common/Button/GeneratePodcastButton.js';
+import GeneratePodcastButton from '../../features/generator/components/GeneratePodcastButton/GeneratePodcastButton.js';
 import InputToggler from '../input/InputToggler/InputToggler.js';
-import InputArea from "../input/InputArea/InputArea.js"
+import InputArea from "../../features/generator/components/InputArea/InputArea.js"
 import Spinner from '../common/Spinner/Spinner.js';
 import PodcastPlayer from './PodcastDisplay.js';
 

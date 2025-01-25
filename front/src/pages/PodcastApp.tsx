@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import PodcastGenerator from '../pages/PodcastGenerator'
-import PodcastPlayer from '../pages/PodcastDisplay'
+import PodcastGenerator from '../features/PodcastGenerator/components/PodcastGenerator'
+import PodcastPlayer from '../features/podcast-playback/PodcastDisplay'
 
 export default function PodcastApp() {
   const [podcastData, setPodcastData] = useState(null)
