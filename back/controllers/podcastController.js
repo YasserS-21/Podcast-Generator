@@ -20,7 +20,6 @@ exports.generateFromAudio = async (req, res) => {
     if (!req.file) {
       return res.status(400).json({ error: 'No audio file provided' });
     }
-    console.log(req.file)
     // Here I will process with FFmpeg 
     const outputPath = await processAudio(req.file.buffer);
 
