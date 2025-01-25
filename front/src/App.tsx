@@ -1,12 +1,12 @@
 /* @ts-expect-ignore */ // This line will ignore TypeScript 
 import './App.css'
 
-import PodcastGenerator from './features/PodcastGenerator/components/PodcastGenerator.js';
+import PodcastApp from './pages/PodcastApp'
 function App() {
 
   return (
     <>
-      <PodcastGenerator />
+      <PodcastApp />
     </>
   )
 }

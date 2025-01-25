@@ -1,7 +1,6 @@
-import React from 'react'
 import PlayButton from '../PlayButton/PlayButton'
-import ProgressBar from '../ProgressBar/ProgressBar'
-import SpeedControl from '../SpeedControl/SpeedControl'
+import ProgressBar from '../components/ProgressBar/ProgressBar'
+import SpeedControl from '../components/SpeedControl/SpeedControl'
 
 export default function PodcastPlayer() {
   return (

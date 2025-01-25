@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import PodcastGenerator from '../features/PodcastGenerator/components/PodcastGenerator'
-import PodcastPlayer from '../features/podcast-playback/PodcastDisplay'
+import PodcastGenerator from '../components/PodcastGenerator/PodcastGenerator'
+import PodcastDisplay from '../components/PodcastDisplay/PodcastDisplay'
 
 export default function PodcastApp() {
   const [podcastData, setPodcastData] = useState(null)
@@ -8,7 +8,7 @@ export default function PodcastApp() {
     <>
     <div className='podcast-app'>
         <PodcastGenerator setPodcastData={setPodcastData}/>
-        {podcastData && <PodcastPlayer podcastData={podcastData}/>}
+        {podcastData && <PodcastDisplay podcastData={podcastData}/>}
     </div>
     </>
   )

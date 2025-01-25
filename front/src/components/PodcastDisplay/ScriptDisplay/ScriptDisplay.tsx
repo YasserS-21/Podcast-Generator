@@ -1,4 +1,4 @@
-import ScriptSegment from '../ScriptSegment/ScriptSegment'
+import ScriptSegment from '../components/ScriptSegment/ScriptSegment'
 
 export default function ScriptDisplay() {
   return (

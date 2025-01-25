@@ -1,5 +1,5 @@
-import PodcastPlayer from "./components/PodcastPlayer/PodcastPlayer"
-import ScriptDisplay from "./components/ScriptDisplay/ScriptDisplay"
+import PodcastPlayer from "./PodcastPlayer/PodcastPlayer"
+import ScriptDisplay from "./ScriptDisplay/ScriptDisplay"
 
 export default function PodcastDisplay({podcastData}) {
     
