@@ -3,6 +3,7 @@ import GeneratePodcastButton from '../components/GeneratePodcastButton.js';
 import InputToggler from '../components/InputToggler.js';
 import InputArea from "../components/InputArea.js"
 import Spinner from '../components/Spinner/Spinner.js';
+import PodcastPlayer from '../components/PodcastPlayer.js';
 
 /**
  * Main container component for the podcast generation interface
@@ -11,12 +12,11 @@ import Spinner from '../components/Spinner/Spinner.js';
  * - inputType: Toggle between 'text' and 'audio' input modes
  * - userTextInput: Text input from user
  */
-export default function PodcastGenerator() {
+export default function PodcastGenerator({setPodcastData}) {
   const [audioFile, setAudioFile] = useState(null);
   const [inputType, setInputType] = useState('text'); // 'text' or 'audio'
   const [userTextInput, setUserTextInput] = useState('')
   const [isLoading, setIsLoading] = useState(false);
-  const [podcastData, setPodcastData] = useState(null)
 
   return (
     <>
@@ -39,8 +39,6 @@ export default function PodcastGenerator() {
       />
     </div>
     {isLoading && <Spinner message="Generating podcast..." />}
-    {/**TODO! create podcast display component and pass in podcastData  */}
-    {podcastData && <>This is the podcast</>}
     </>
   )
 }
