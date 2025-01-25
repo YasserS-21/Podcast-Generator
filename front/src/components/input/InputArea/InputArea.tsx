@@ -1,5 +1,5 @@
-import UserTextArea from './UserTextArea'
-import AudioUploadButton from './AudioUploadButton'
+import UserTextArea from '../UserTextArea'
+import AudioUploadButton from '../AudioUploadButton'
 
 interface InputAreaProps {
   inputType: string;

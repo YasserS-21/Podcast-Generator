@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import GeneratePodcastButton from '../components/GeneratePodcastButton.js';
-import InputToggler from '../components/InputToggler.js';
-import InputArea from "../components/InputArea.js"
-import Spinner from '../components/Spinner/Spinner.js';
-import PodcastPlayer from '../components/PodcastPlayer.js';
+import GeneratePodcastButton from '../common/Button/GeneratePodcastButton.js';
+import InputToggler from '../input/InputToggler/InputToggler.js';
+import InputArea from "../input/InputArea/InputArea.js"
+import Spinner from '../common/Spinner/Spinner.js';
+import PodcastPlayer from './PodcastDisplay.js';
 
 /**
  * Main container component for the podcast generation interface
