@@ -7,7 +7,7 @@ export default function PodcastDisplay({podcastData}) {
     <>
     <div className='podcast-display'>PodcastDisplay
         <PodcastPlayer/>
-        <ScriptDisplay/>
+        <ScriptDisplay podcastData={podcastData} />
     </div>
     </>
   )
