@@ -6,7 +6,7 @@ export default function PodcastDisplay({podcastData}) {
   return (
     <>
     <div className='podcast-display'>PodcastDisplay
-        <PodcastPlayer/>
+        <PodcastPlayer podcastData={podcastData}/>
         <ScriptDisplay podcastData={podcastData} />
     </div>
     </>
