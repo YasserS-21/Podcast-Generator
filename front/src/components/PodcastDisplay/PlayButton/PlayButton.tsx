@@ -9,15 +9,17 @@ import React, { useState } from 'react';
  * @param {Object} props - The component props
  * @param {SpeechSynthesis} props.synth - The speech synthesis instance used to control playback
  */
-export default function PlayButton({ synth }) {
-  const [isPlaying, setIsPlaying] = useState(true);
+export default function PlayButton({ synth, isPlaying, setIsPlaying}) {
+
 
   const togglePlayPause = () => {
-    if (synth.speaking) {
+    if (isPlaying) {
       synth.pause(); // Stop the speech synthesis
+      console.log("pausing")
       setIsPlaying(false);
     } else {
       // Assuming you have a function to start the speech synthesis
+      console.log("resuming")
       synth.resume()
       setIsPlaying(true);
     }
