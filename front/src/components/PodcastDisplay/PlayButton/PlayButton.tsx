@@ -1,7 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-export default function PlayButton() {
+/**
+ * PlayButton component
+ * 
+ * This component is responsible for controlling the playback of the podcast using the Web Speech API.
+ * It toggles between play and pause states based on the synth's speaking status.
+ * 
+ * @param {Object} props - The component props
+ * @param {SpeechSynthesis} props.synth - The speech synthesis instance used to control playback
+ */
+export default function PlayButton({ synth }) {
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const togglePlayPause = () => {
+    if (synth.speaking) {
+      synth.pause(); // Stop the speech synthesis
+      setIsPlaying(false);
+    } else {
+      // Assuming you have a function to start the speech synthesis
+      synth.resume()
+      setIsPlaying(true);
+    }
+  };
+
+
+
   return (
-    <div>PlayButton</div>
-  )
+    <button onClick={togglePlayPause}>
+      {isPlaying ? 'Pause' : 'Play'}
+    </button>
+  );
 }
