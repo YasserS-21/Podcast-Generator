@@ -1,5 +1,5 @@
 /* @ts-expect-ignore */ // This line will ignore TypeScript 
-import './App.css'
+// import './App.css'
 
 import PodcastApp from './pages/PodcastApp'
 function App() {

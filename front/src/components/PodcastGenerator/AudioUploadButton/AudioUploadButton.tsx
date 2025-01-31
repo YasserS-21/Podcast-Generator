@@ -14,11 +14,16 @@ export default function AudioUploadButton({setAudioFile}) {
     setAudioFile(file);
   };
 
-    return (
-        <>
-          <div className="audio-upload-button">
-            <input type="file" accept="audio/*" onChange={handleFileChange} />
-          </div>
-        </>
-      )
-    }
+  return (
+    <div className="audio-upload-button">
+      <input 
+        type="file" 
+        accept="audio/*" 
+        id="audio-upload" 
+        onChange={handleFileChange} 
+        style={{ display: 'none' }}
+      />
+      <label htmlFor="audio-upload">Upload Audio</label>
+    </div>
+  );
+}
