@@ -16,6 +16,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 // Podcast route - file will be in req.file.buffer instead of on disk
 router.post('/generate-podcast', upload.single('audio'), podcastController.generateFromAudio);
 
+router.post('/generate-from-transcript', podcastController.generateFromTranscript);
 // Route for text-based generation 
 // router.post('/generate-from-text', podcastController.generateFromText);
 

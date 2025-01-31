@@ -44,7 +44,7 @@ exports.generateFromAudio = async (req, res) => {
                         "speaker": "1",
                         "text": "Dialogue explaining technical concept",
                         "timestamp": 0,
-                        duration": 5.5
+                        "duration": 5.5
                         }, 
                         {
                         "speaker": "2",
@@ -111,5 +111,97 @@ exports.generateFromAudio = async (req, res) => {
   } catch (error) {
     console.error('Error generating podcast:', error);
     res.status(500).json({ error: 'Failed to generate podcast' });
+  }
+};
+
+exports.generateFromTranscript = async (req, res) => {
+  try {
+    // Check if received text input
+    if (!req.body.transcript) {
+      return res.status(400).json({ error: 'No text input provided' });
+    }
+
+    // Define Gemini model 
+    const model = genAI.getGenerativeModel({
+        model: "gemini-1.5-flash",
+        generationConfig: {
+          temperature: 0.5,
+          topP: 0.95,
+          topK: 40,
+          maxOutputTokens: 5500,
+        }
+      });
+
+    // JSON Object Template 
+    let jsonObjectTemplate = `{
+                    "segments": [
+                        {
+                        "speaker": "1",
+                        "text": "Dialogue explaining technical concept",
+                        "timestamp": 0,
+                        "duration": 5.5
+                        }, 
+                        {
+                        "speaker": "2",
+                        "text": "Clarifying questions or responses",
+                        "timestamp": 5.5,
+                        "duration": 3.2
+                        }
+                        ],
+                    "metadata": {
+                        "topic": "Specific Technical Topic",
+                        "totalDuration": 8.7
+                        }    
+                    }`
+
+    // Generate script
+    const script = await model.generateContent([
+        {
+            text: req.body.transcript
+        }, 
+        {
+            text: 
+            `
+            You are an AI podcast script generator. Given a text discussing a technical or educational topic, generate a conversational script between two speakers that:
+                - Breaks down complex ideas into digestible explanations
+                - Mimics natural dialogue with questions and explanations
+                - Maintains an engaging, educational tone
+                - Accurately represents the core content of the text  
+            Output requirements:
+                - Conversational, but informative dialogue
+                - Reflect the technical depth of the original text
+                - Include key points, analogies, and explanatory examples
+                - Maintain a realistic back-and-forth conversation style
+                - Include metadata about topic and conversation flow
+                - Add estimated timestamps and segment durations
+                
+                Example Template
+                    ${jsonObjectTemplate}  
+   
+            Processing steps:
+                1. Carefully read the entire text
+                2. Identify the primary topic and key concepts
+                3. Create a dialogue that progressively explains the subject
+                4. Use one speaker as the primary explainer, the other as an inquisitive learner
+                5. Include clarifying questions and explanatory responses
+                
+            `
+        }
+    ]);
+
+    // Cannot Remove json tags from gemini output so manually remove 
+    let responseText = script.response.text().replace(/```json\n?/, '').replace(/```\n?/, '');
+
+    // Parse response into javascript 
+    const cleanJson = JSON.parse(responseText);
+
+    // Send the generated script back to frontend
+    return res.status(200).json({ 
+        podcast: cleanJson
+      });
+
+  } catch (error) {
+    console.error('Error generating podcast from text:', error);
+    res.status(500).json({ error: 'Failed to generate podcast from text' });
   }
 };
