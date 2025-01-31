@@ -2,13 +2,13 @@ import React from 'react';
 import { playSegments } from '../../../utils/playSegments';
 import './ProgressBar.css'; // Import the CSS file for styling
 
-export default function ProgressBar({ podcastData, synth }) {
+export default function ProgressBar({ podcastData, synth, currentUtterance}) {
   const [progress, setProgress] = React.useState(0);
   const segments = podcastData.podcast.segments;
 
   React.useEffect(() => {
-    playSegments(segments, synth, setProgress);
-  }, [segments, synth]);
+    playSegments(segments, synth, setProgress, currentUtterance);
+  }, []);
 
   return (
     <div className="progress-bar-container">
