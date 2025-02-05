@@ -21,21 +21,27 @@ export default function PodcastGenerator({setPodcastData}) {
     <>
     <h1>PodcastGenerator</h1>
     <div className="podcast-generator">
-      <InputToggler inputType={inputType} setInputType={setInputType}/>
-      <InputArea
+      <div className="input-toggler-container">
+        <InputToggler inputType={inputType} setInputType={setInputType}/>
+      </div>
+      <div className="input-area-container">
+        <InputArea
+            inputType={inputType}
+            userTextInput={userTextInput}
+            setUserTextInput={setUserTextInput}
+            setAudioFile={setAudioFile}
+        />
+      </div>
+      <div className="generate-button-container">
+        <GeneratePodcastButton 
+          audioFile={audioFile} 
+          userTextInput={userTextInput} 
           inputType={inputType}
-          userTextInput={userTextInput}
-          setUserTextInput={setUserTextInput}
-          setAudioFile={setAudioFile}
-      />
-      <GeneratePodcastButton 
-        audioFile={audioFile} 
-        userTextInput={userTextInput} 
-        inputType={inputType}
-        isLoading={isLoading}
-        setIsLoading={setIsLoading}
-        setPodcastData={setPodcastData}
-      />
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+          setPodcastData={setPodcastData}
+        />
+      </div>
     </div>
     {isLoading && <Spinner message="Generating podcast..." />}
     </>
