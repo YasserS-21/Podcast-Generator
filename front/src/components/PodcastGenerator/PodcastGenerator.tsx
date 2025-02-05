@@ -5,6 +5,8 @@ import InputArea from "./InputArea/InputArea.js"
 import Spinner from '../common/Spinner/Spinner.js';
 import headerImage from "../../assets/header.png"
 import helpImage from '../../assets/help.png'; 
+import AudioFileDisplay from './AudioFileDisplay/AudioFileDisplay.js';
+
 
 /**
  * Main container component for the podcast generation interface
@@ -37,6 +39,7 @@ export default function PodcastGenerator({setPodcastData}) {
             userTextInput={userTextInput}
             setUserTextInput={setUserTextInput}
             setAudioFile={setAudioFile}
+            audioFile={audioFile}
         />
       </div>
       <div className="generate-button-container">

@@ -1,6 +1,5 @@
 import UserTextArea from '../UserTextArea/UserTextArea';
 import AudioUploadButton from '../AudioUploadButton/AudioUploadButton'
-
 interface InputAreaProps {
   inputType: string;
   userTextInput: string;
@@ -12,7 +11,8 @@ export default function InputArea({
   inputType, 
   userTextInput, 
   setUserTextInput, 
-  setAudioFile 
+  setAudioFile,
+  audioFile
 }: InputAreaProps) {
   return (
     <div className="input-area">
@@ -22,9 +22,12 @@ export default function InputArea({
           setUserTextInput={setUserTextInput}
         />
       ) : (
-        <AudioUploadButton 
-          setAudioFile={setAudioFile} 
+       <> <AudioUploadButton 
+          setAudioFile={setAudioFile}
+          audioFile={audioFile} 
         />
+     
+  </>
       )}
     </div>
   )

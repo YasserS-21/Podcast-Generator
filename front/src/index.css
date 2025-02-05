@@ -31,8 +31,13 @@ body {
   }
   
   .input-area {
-    margin-bottom: 1.5rem;
-    width: 100%;
+    display: flex; /* Use flexbox for the input area */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    flex-direction: column; /* Stack items vertically */
+    width: 100%; /* Ensure it takes full width */
+    padding: 1rem; /* Add padding to the input area for spacing */
+    box-sizing: border-box; /* Include padding in width calculations */
   }
   
   .text-input {
@@ -48,9 +53,12 @@ body {
   
   .audio-upload-button {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center the content horizontally */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items vertically */
     margin: 1rem 0;
-    width: 100%;
+    width: 60%; /* Increase width for a larger button */
+    text-align: center; /* Center the text within the label */
   }
   
   .audio-upload-button input {
@@ -59,13 +67,14 @@ body {
   }
 
   .audio-upload-button label {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #0279bd;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    display: block; /* Ensure the label takes full width */
+    text-align: center; /* Center the text within the label */
+    font-size: 1rem; /* Use consistent font size (16px) */
+    padding: 1rem; /* Add padding for a larger clickable area */
+    background-color: #0279bd; /* Keep your original background color */
+    color: #ffffff; /* Keep your original text color */
+    border-radius: 4px; /* Keep your original border radius */
+    cursor: pointer; /* Change cursor to pointer for better UX */
   }
   
   .audio-upload-button label:hover:not(.input-active) {
@@ -75,7 +84,7 @@ body {
   .input-toggle {
     display: flex; /* Ensure the buttons are in a row */
     justify-content: space-between; /* Space out the buttons */
-    margin: 1rem 0; /* Add vertical margin for spacing */
+
     width: 100%; /* Ensure the container takes full width */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
   }
@@ -235,6 +244,7 @@ button:hover {
 
 .input-area-container {
     max-height: 100px; /* Set a minimum height to prevent resizing */
+    flex-direction: column;
 }
 
 .generate-button-container {
@@ -296,5 +306,10 @@ button:hover {
     justify-content: center;
     align-items: center;
     margin: 0 auto; /* Optional: to center the container itself */
+}
+
+/* Base font size for the application */
+html {
+  font-size: 16px; /* Set base font size */
 }
 
