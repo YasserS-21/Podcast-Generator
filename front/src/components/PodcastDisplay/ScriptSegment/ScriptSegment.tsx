@@ -1,6 +1,4 @@
 import React from 'react'
-import { formatTimeStamp } from '../../../utils/formatTimeStamp'
-
 /**
  * ScriptSegment component
  * 
@@ -11,10 +9,9 @@ import { formatTimeStamp } from '../../../utils/formatTimeStamp'
  * @param {Object} props.segment - The segment data, including speaker, text, timestamp, and duration
  */
 export default function ScriptSegment({ segment }) {
-  let formattedTime = formatTimeStamp(segment.timestamp, segment.duration)
   return (
     <div className="segment">
-      <p><em>{formattedTime[0]} - {formattedTime[1]}</em> <strong>Speaker {segment.speaker}:</strong> {segment.text}</p>
+      <p><strong>Speaker {segment.speaker}:</strong> {segment.text}</p>
       <br/>
     </div>
   )
