@@ -6,7 +6,6 @@ import { useSpeechSynthesis } from '../../../hooks/useSpeechSynthesis'
 
 export default function PodcastPlayer({podcastData}) {
   const { currentUtterance, synth } = useSpeechSynthesis();
-  console.log(currentUtterance)
   // progress bar will be used to display the progress of the podcast and will utter in file
   // speed control will be used to control the speed of the podcast using the synth.rate property
   // play will be used to stop and start the podcast using the synth.speaking property

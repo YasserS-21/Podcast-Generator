@@ -1,8 +1,8 @@
 export function playSegments(segments, synth, updateProgress, currentUtterance) {
     let currentSegmentIndex = 0;
-  
+    let voices = synth.getVoices()
     function playNextSegment() {
-        console.log(currentUtterance)
+      currentUtterance.voice = voices[+segments[currentSegmentIndex].speaker]
       if (currentSegmentIndex < segments.length) {
         currentUtterance.text = segments[currentSegmentIndex].text 
         currentUtterance.onend = () => {
