@@ -3,6 +3,8 @@ import GeneratePodcastButton from './GeneratePodcastButton/GeneratePodcastButton
 import InputToggler from './InputToggler/InputToggler.js';
 import InputArea from "./InputArea/InputArea.js"
 import Spinner from '../common/Spinner/Spinner.js';
+import headerImage from "../../assets/header.png"
+import helpImage from '../../assets/help.png'; 
 
 /**
  * Main container component for the podcast generation interface
@@ -19,7 +21,12 @@ export default function PodcastGenerator({setPodcastData}) {
 
   return (
     <>
-    <h1>PodcastGenerator</h1>
+    <h1>
+      <div className="centered-image">
+        <img src={headerImage} alt="Header" style={{ width: '300px', height: 'auto' }} />
+      </div>
+
+    </h1>
     <div className="podcast-generator">
       <div className="input-toggler-container">
         <InputToggler inputType={inputType} setInputType={setInputType}/>
@@ -41,6 +48,7 @@ export default function PodcastGenerator({setPodcastData}) {
           setIsLoading={setIsLoading}
           setPodcastData={setPodcastData}
         />
+        <img src={helpImage} alt="Help" style={{ width: '30px', height: 'auto', marginLeft: '10px' }} />
       </div>
     </div>
     {isLoading && <Spinner message="Generating podcast..." />}

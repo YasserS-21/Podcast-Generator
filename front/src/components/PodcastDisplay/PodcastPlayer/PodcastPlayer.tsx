@@ -12,10 +12,12 @@ export default function PodcastPlayer({podcastData}) {
   const [isPlaying, setIsPlaying] = useState(true);
 
   return (
-    <div>
+    <div className="podcast-player-container">
       {currentUtterance && <ProgressBar podcastData={podcastData} synth={synth} currentUtterance={currentUtterance} />}
-      {currentUtterance && <SpeedControl currentUtterance={currentUtterance} />}
-      <PlayButton synth={synth} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+      <div className="controls-container">
+        {currentUtterance && <SpeedControl currentUtterance={currentUtterance} />}
+        <PlayButton synth={synth} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+      </div>
     </div>
   )
 }

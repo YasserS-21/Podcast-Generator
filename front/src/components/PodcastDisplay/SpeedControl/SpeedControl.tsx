@@ -16,7 +16,7 @@ export default function SpeedControl({ currentUtterance}) {
   }, [currentUtterance, speed]);
 
   return (
-    <div>
+    <div className="speed-controls">
       <label htmlFor="speedControl">Speed Control: {speed}x</label>
       <input
         id="speedControl"

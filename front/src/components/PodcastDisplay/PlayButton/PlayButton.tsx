@@ -28,8 +28,8 @@ export default function PlayButton({ synth, isPlaying, setIsPlaying}) {
 
 
   return (
-    <button onClick={togglePlayPause}>
-      {isPlaying ? 'Pause' : 'Play'}
-    </button>
+<button className="play-button" onClick={togglePlayPause}>
+            {isPlaying ? 'Pause' : 'Play'}
+        </button>
   );
 }
