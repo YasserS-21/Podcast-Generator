@@ -18,7 +18,6 @@ body {
   /* Podcast Generator Styles */
   .podcast-generator {
     max-width: 800px;
-    max-height:300px;
     margin: 0 auto;
     padding: 1rem;
     background-color: #1e1e1e;
@@ -125,6 +124,25 @@ body {
     padding: 1rem;
     background-color: #1e1e1e;
     border-radius: 8px;
+    max-width: 800px; /* Match the width of the generator */
+    width: 100%; /* Ensure it takes full width */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure it takes full height */
+    margin: 0 auto; /* Center horizontally */
+  }
+  
+  .podcast-player-container {
+    position: sticky; /* Make the player sticky */
+    top: 0; /* Stick to the top of the container */
+    z-index: 10; /* Ensure it stays above other content */
+    background-color: #1e1e1e; /* Match background */
+  }
+  
+  .script-display-container {
+    max-height: 300px; /* Set a maximum height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-top: 1rem; /* Add some space between player and script */
   }
   
   .segment {
@@ -230,4 +248,20 @@ button:hover {
 
 .generate-button-container {
     min-height: 50px; /* Set a minimum height for the button */
+}
+
+.podcast-container {
+    display: flex;
+    flex-direction: column; /* Stack components vertically */
+    align-items: center; /* Center components horizontally */
+    max-width: 800px; /* Match the width of the generator */
+    margin: 0 auto; /* Center the container */
+}
+
+.podcast-generator,
+.podcast-display {
+    width: 100%; /* Full width */
+    max-height: 300px; /* Set a fixed height */
+    margin-bottom: 1rem; /* Space between components */
+    overflow-y: auto;
 }
